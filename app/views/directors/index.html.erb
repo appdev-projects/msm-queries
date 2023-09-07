@@ -1,1 +1,17 @@
-directors
+<div class="container text-center">
+  <div class="card">
+  <% @directors.each do |director| %>
+    <img src="<%= director.image %>" class="card-img-top" alt="director_image" ">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= director.name %>
+      </h5>
+      <p class="card-text">
+        <%= director.dob %>
+      </p>
+      <%# TODO: change to the show path %>
+      <%= link_to "Show details", directors_path, class: "btn btn-secondary" %>
+    </div>
+  <% end %>
+  </div>
+</div> 
