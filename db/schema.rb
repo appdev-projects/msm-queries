@@ -10,12 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_07_193219) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_193436) do
   create_table "directors", force: :cascade do |t|
     t.string "name"
     t.date "dob"
     t.text "bio"
     t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.integer "duration"
+    t.text "description"
+    t.string "image"
+    t.integer "director_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
